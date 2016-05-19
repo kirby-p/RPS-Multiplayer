@@ -39,6 +39,11 @@ $("#enterName").on("click", function(){
 		wins: 0,
 		losses: 0
 	})
+	gameData.ref("players/2").set({
+		name: player1Name,
+		wins: 0,
+		losses: 0
+	})
 	return false;
 });
 
