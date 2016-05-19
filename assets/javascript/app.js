@@ -1,12 +1,11 @@
   // Initialize Firebase
-  // var config = {
-  //   apiKey: "AIzaSyA3lWq9MJGHa-r5oiFdgFlrhwFpF-JrTzM",
-  //   authDomain: "rps-multiplayer-5636-39611.firebaseapp.com",
-  //   databaseURL: "https://rps-multiplayer-5636-39611.firebaseio.com",
-  //   storageBucket: "rps-multiplayer-5636-39611.appspot.com",
-  // };
-  // firebase.initializeApp(config);
-
+  var config = {
+    apiKey: "AIzaSyDQgAuTb9u8gK5R4AuEsWK-YPvwr5l4KQY",
+    authDomain: "rps-multiplayer-13c5f.firebaseapp.com",
+    databaseURL: "https://rps-multiplayer-13c5f.firebaseio.com",
+    storageBucket: "",
+  };
+  firebase.initializeApp(config);
 
 
 //   var gameData = firebase.database();
