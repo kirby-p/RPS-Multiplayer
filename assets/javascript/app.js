@@ -12,12 +12,17 @@ var gameData = firebase.database();
 
 if(gameData.ref("players/1")){
 	var playerNumber = 2;
+	console.log("there is a player 1");
 }
 else if(gameData.ref("players/2")){
 	var playerNumber = 1;
+	console.log("there is a player 2");
+
 }
 else{
 	var playerNumber = 1;
+	console.log("there are no players present");
+
 }
 
 console.log(playerNumber);
