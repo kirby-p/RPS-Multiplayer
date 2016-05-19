@@ -10,6 +10,8 @@ firebase.initializeApp(config);
 
 var gameData = firebase.database();
 
+gameData.ref().child("players").remove();
+
 // console.log(gameData);
 
 // var playerData = gameData.child("players");
@@ -25,7 +27,7 @@ var gameData = firebase.database();
 // console.log(playerNumber);
 
 
-playerData.remove();
+// playerData.remove();
 
 $("#enterName").on("click", function(){
 	var player1Name = $("#playerName").val().trim();
