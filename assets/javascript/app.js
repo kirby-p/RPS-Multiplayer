@@ -10,11 +10,11 @@ firebase.initializeApp(config);
 
 var gameData = firebase.database();
 
-if(gameData.ref("players/1")){
+if(gameData.ref("players/1") == true){
 	var playerNumber = 2;
 	console.log("there is a player 1");
 }
-else if(gameData.ref("players/2")){
+else if(gameData.ref("players/2") == true){
 	var playerNumber = 1;
 	console.log("there is a player 2");
 
