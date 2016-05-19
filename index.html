@@ -4,7 +4,8 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="http://meyerweb.com/eric/tools/css/reset/reset.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">	
-	<script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
+
+
 
 	<title>Rock, Paper, Scissors</title>
 </head>
@@ -32,8 +33,23 @@
 			</div>
 		</div>
 	</div>
-<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
-<script src="assets/javascript/app.js"></script>
+
 </body>
 
+
+<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDQgAuTb9u8gK5R4AuEsWK-YPvwr5l4KQY",
+    authDomain: "rps-multiplayer-13c5f.firebaseapp.com",
+    databaseURL: "https://rps-multiplayer-13c5f.firebaseio.com",
+    storageBucket: "",
+  };
+  firebase.initializeApp(config);
+</script>
+    
+    
+<!--     <script src="assets/javascript/app.js"></script> -->	
+	<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
 </html>
