@@ -10,7 +10,7 @@ firebase.initializeApp(config);
 
 var gameData = firebase.database();
 
-gameData.ref("players/1").remove();
+gameData.ref("players").child("1").remove();
 
 // console.log(gameData);
 
