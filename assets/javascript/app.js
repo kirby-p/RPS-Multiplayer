@@ -10,6 +10,18 @@ firebase.initializeApp(config);
 
 var gameData = firebase.database();
 
+if(gameData.ref("players/1")){
+	var playerNumber = 2;
+}
+else if(gameData.ref("players/2")){
+	var playerNumber = 1;
+}
+else{
+	var playerNumber = 1;
+}
+
+console.log(playerNumber);
+
 gameData.ref("players/1").remove();
 
 // console.log(gameData);
