@@ -25,15 +25,15 @@ var gameData = firebase.database();
 // console.log(playerNumber);
 
 
-// playerData.remove();
+playerData.remove();
 
 $("#enterName").on("click", function(){
 	var player1Name = $("#playerName").val().trim();
 	$("#waiting1").empty();
 	$("#player1").html(player1Name);
 
-	gameData.ref("players").set({
-		name: playerName,
+	gameData.ref("players/1").set({
+		name: player1Name,
 		wins: 0,
 		losses: 0
 	})
