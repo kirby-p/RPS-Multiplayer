@@ -35,7 +35,7 @@ gameData.ref('players').on('value', function(snapshot) {
 
 // }
 
-console.log(playerNumber);
+// console.log(playerNumber);
 
 // gameData.ref("players/1").remove();
 
