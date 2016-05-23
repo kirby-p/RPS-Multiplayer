@@ -53,7 +53,7 @@ $("#enterName").on("click", function(){
 	$("#player1").html(playerName);
 
 	gameData.ref('players').on('value', function(snapshot) {
-		if(snapshot.val() == null || snapshot.val() == 2){
+		if(snapshot.val() == null || snapshot.val() == "2"){
 			var playerNumber = 1;
 			gameData.ref("players/1").set({
 				name: playerName,
@@ -61,7 +61,7 @@ $("#enterName").on("click", function(){
 				losses: 0
 			})
 		}
-		else if(snapshot.val() == 1){
+		else if(snapshot.val() == "1"){
 			var playerNumber = 2;
 			gameData.ref("players/2").set({
 				name: playerName,
