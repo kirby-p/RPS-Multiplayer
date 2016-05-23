@@ -52,7 +52,7 @@ $("#enterName").on("click", function(){
 
 	gameData.ref('players').on('value', function(snapshot) {
 
-		if(snapshot.hasChild() == null || snapshot.hasChild(2)){
+		if(DataSnapshot.hasChild() == null || DataSnapshot.hasChild(2)){
 			var playerNumber = 1;
 			gameData.ref("players/1").set({
 				name: playerName,
@@ -62,7 +62,7 @@ $("#enterName").on("click", function(){
 			$("#waiting1").empty();
 			$("#player1").html(playerName);
 		}
-		else if(snapshot.hasChild(1)){
+		else if(DataSnapshot.hasChild(1	)){
 			var playerNumber = 2;
 			gameData.ref("players/2").set({
 				name: playerName,
