@@ -75,7 +75,7 @@ $("#enterName").on("click", function(){
 		console.log("You are player " + playerNumber);
 	});
 
-		console.log("Are you still player " + playerNumber + " ?");
+	// console.log("Are you still player " + playerNumber + " ?");
 
 	return false;
 });
