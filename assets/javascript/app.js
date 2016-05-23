@@ -10,24 +10,34 @@ firebase.initializeApp(config);
 
 var gameData = firebase.database();
 
-if(gameData.ref("players/1") == true){
-	var playerNumber = 2;
-	console.log("there is a player 1");
-}
-else if(gameData.ref("players/2") == true){
-	var playerNumber = 1;
-	console.log("there is a player 2");
+gameData.ref('players/' + plNumber).on('value', function(snapshot) {
+	if(snapshot.val() == null || snapshot.val() == 2){
+		playerNumber = 1;
+	}
+	else if(snapshot.val() == 1){
+		playerNumber = 2;
+	}
+	console.log("You are player " + playerNumber);
+});
 
-}
-else{
-	var playerNumber = 1;
-	console.log("there are no players present");
+// if(gameData.ref("players/1") == true){
+// 	var playerNumber = 2;
+// 	console.log("there is a player 1");
+// }
+// else if(gameData.ref("players/2") == true){
+// 	var playerNumber = 1;
+// 	console.log("there is a player 2");
 
-}
+// }
+// else{
+// 	var playerNumber = 1;
+// 	console.log("there are no players present");
+
+// }
 
 console.log(playerNumber);
 
-gameData.ref("players/1").remove();
+// gameData.ref("players/1").remove();
 
 // console.log(gameData);
 
