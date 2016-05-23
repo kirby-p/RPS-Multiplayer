@@ -49,25 +49,28 @@ var gameData = firebase.database();
 
 $("#enterName").on("click", function(){
 	var playerName = $("#playerName").val().trim();
-	$("#waiting1").empty();
-	$("#player1").html(playerName);
 
 	gameData.ref('players').on('value', function(snapshot) {
-		if(snapshot.val() == null || snapshot.val() == "2"){
+
+		if(snapshot.hasChild() == null || snapshot.hasChild(2)){
 			var playerNumber = 1;
 			gameData.ref("players/1").set({
 				name: playerName,
 				wins: 0,
 				losses: 0
-			})
+			});
+			$("#waiting1").empty();
+			$("#player1").html(playerName);
 		}
-		else if(snapshot.val() == "1"){
+		else if(snapshot.hasChild(1)){
 			var playerNumber = 2;
 			gameData.ref("players/2").set({
 				name: playerName,
 				wins: 0,
 				losses: 0
-			})
+			});
+			$("#waiting2").empty();
+			$("#player2").html(playerName);
 		}
 		else{
 			alert("Please wait your turn to play Rock, Paper, Scissors");
