@@ -10,20 +10,6 @@ firebase.initializeApp(config);
 
 var gameData = firebase.database();
 
-gameData.ref('players').on('value', function(snapshot) {
-	if(snapshot.val() == null || snapshot.val() == 2){
-		var playerNumber = 1;
-	}
-	else if(snapshot.val() == 1){
-		var playerNumber = 2;
-	}
-	else{
-		alert("Please wait your turn to play Rock, Paper, Scissors");
-	}
-	console.log("You are player " + playerNumber);
-});
-
-	console.log("Are you still player " + playerNumber + " ?");
 
 // if(gameData.ref("players/1") == true){
 // 	var playerNumber = 2;
@@ -64,18 +50,34 @@ gameData.ref('players').on('value', function(snapshot) {
 $("#enterName").on("click", function(){
 	var player1Name = $("#playerName").val().trim();
 	$("#waiting1").empty();
-	$("#player1").html(player1Name);
+	$("#player1").html(playerName);
 
-	gameData.ref("players/1").set({
-		name: player1Name,
-		wins: 0,
-		losses: 0
-	})
-	gameData.ref("players/2").set({
-		name: player1Name,
-		wins: 0,
-		losses: 0
-	})
+
+	gameData.ref('players').on('value', function(snapshot) {
+		if(snapshot.val() == null || snapshot.val() == 2){
+			var playerNumber = 1;
+			gameData.ref("players/1").set({
+				name: playerName,
+				wins: 0,
+				losses: 0
+			})
+		}
+		else if(snapshot.val() == 1){
+			var playerNumber = 2;
+			gameData.ref("players/2").set({
+				name: playerName,
+				wins: 0,
+				losses: 0
+			})
+		}
+		else{
+			alert("Please wait your turn to play Rock, Paper, Scissors");
+		}
+		console.log("You are player " + playerNumber);
+	});
+
+		console.log("Are you still player " + playerNumber + " ?");
+
 	return false;
 });
 
