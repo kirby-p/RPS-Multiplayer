@@ -18,7 +18,7 @@ gameData.ref('players').on('value', function(snapshot) {
 		var playerNumber = 2;
 	}
 	console.log("You are player " + playerNumber);
-	console.log(snapshot);
+	console.log(snapshot.val());
 });
 
 // if(gameData.ref("players/1") == true){
