@@ -21,8 +21,9 @@ gameData.ref('players').on('value', function(snapshot) {
 		alert("Please wait your turn to play Rock, Paper, Scissors");
 	}
 	console.log("You are player " + playerNumber);
-	console.log(snapshot.val());
 });
+
+	console.log("Are you still player " + playerNumber + " ?");
 
 // if(gameData.ref("players/1") == true){
 // 	var playerNumber = 2;
