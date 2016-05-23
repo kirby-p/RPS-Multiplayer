@@ -48,10 +48,9 @@ var gameData = firebase.database();
 // playerData.remove();
 
 $("#enterName").on("click", function(){
-	var player1Name = $("#playerName").val().trim();
+	var playerName = $("#playerName").val().trim();
 	$("#waiting1").empty();
 	$("#player1").html(playerName);
-
 
 	gameData.ref('players').on('value', function(snapshot) {
 		if(snapshot.val() == null || snapshot.val() == 2){
