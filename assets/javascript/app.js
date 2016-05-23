@@ -10,7 +10,7 @@ firebase.initializeApp(config);
 
 var gameData = firebase.database();
 
-gameData.ref('players/' + plNumber).on('value', function(snapshot) {
+gameData.ref('players').on('value', function(snapshot) {
 	if(snapshot.val() == null || snapshot.val() == 2){
 		playerNumber = 1;
 	}
