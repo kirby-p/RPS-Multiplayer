@@ -12,10 +12,10 @@ var gameData = firebase.database();
 
 gameData.ref('players').on('value', function(snapshot) {
 	if(snapshot.val() == null || snapshot.val() == 2){
-		playerNumber = 1;
+		var playerNumber = 1;
 	}
 	else if(snapshot.val() == 1){
-		playerNumber = 2;
+		var playerNumber = 2;
 	}
 	console.log("You are player " + playerNumber);
 });
