@@ -63,7 +63,7 @@ $("#enterName").on("click", function(){
 			$("#player1").html(playerName);
 			console.log("There are no players present yet, you are player 1");
 		}
-		else if(snapshot.hasChild("1") && snapshot.numChildren(1)){
+		else if(snapshot.hasChild("1") && snapshot.numChildren() == 1){
 			var playerNumber = 2;
 			gameData.ref("players/2").set({
 				name: playerName,
@@ -73,6 +73,17 @@ $("#enterName").on("click", function(){
 			$("#waiting2").empty();
 			$("#player2").html(playerName);
 			console.log("You are player 2");
+		}
+		else if(snapshot.hasChild("2") && snapshot.numChildren() == 1){
+			var playerNumber = 1;
+			gameData.ref("players/1").set({
+				name: playerName,
+				wins: 0,
+				losses: 0
+			});
+			$("#waiting1").empty();
+			$("#player1").html(playerName);
+			console.log("You are player 1");
 		}
 		else if(snapshot.hasChild("1") && snapshot.hasChild("2")){
 			console.log("Please wait your turn to play Rock, Paper, Scissors");
