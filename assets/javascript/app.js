@@ -52,7 +52,7 @@ $("#enterName").on("click", function(){
 
 	gameData.ref('players').on('value', function(snapshot) {
 
-		if(firebase.database.DataSnapshot.hasChildren() == false){
+		if(firebase.database.DataSnapshot#hasChildren() == false){
 			var playerNumber = 1;
 			gameData.ref("players/1").set({
 				name: playerName,
@@ -63,7 +63,7 @@ $("#enterName").on("click", function(){
 			$("#player1").html(playerName);
 			console.log("There are no players present yet");
 		}
-		else if(DataSnapshot.hasChild("1")){
+		else if(DataSnapshot#hasChild("1")){
 			var playerNumber = 2;
 			gameData.ref("players/2").set({
 				name: playerName,
