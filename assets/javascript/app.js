@@ -63,7 +63,7 @@ $("#enterName").on("click", function(){
 			$("#player1").html(playerName);
 			console.log("There are no players present yet, you are player 1");
 		}
-		else if(snapshot.hasChild("1")){
+		else if(snapshot.hasChild("1") && snapshot.numChildren(1)){
 			var playerNumber = 2;
 			gameData.ref("players/2").set({
 				name: playerName,
