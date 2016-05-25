@@ -61,7 +61,7 @@ $("#enterName").on("click", function(){
 			});
 			$("#waiting1").empty();
 			$("#player1").html(playerName);
-			console.log("There are no players present yet");
+			console.log("There are no players present yet, you are player 1");
 		}
 		else if(snapshot.hasChild("1")){
 			var playerNumber = 2;
@@ -72,9 +72,10 @@ $("#enterName").on("click", function(){
 			});
 			$("#waiting2").empty();
 			$("#player2").html(playerName);
+			console.log("You are player 2");
 		}
-		else{
-			alert("Please wait your turn to play Rock, Paper, Scissors");
+		else if(snapshot.hasChild("1") && snapshot.hasChild("2")){
+			console.log("Please wait your turn to play Rock, Paper, Scissors");
 		}
 		console.log("You are player " + playerNumber);
 	});
