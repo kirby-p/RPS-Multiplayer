@@ -89,8 +89,9 @@ $("#enterName").on("click", function(){
 			console.log("Please wait your turn to play Rock, Paper, Scissors");
 		}
 		console.log("You are player " + playerNumber);
+		return false;
+
 	});
 
-	return false;
 });
 
